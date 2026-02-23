@@ -1,0 +1,10 @@
+pulp-riscv-gcc-toolchain/
+pulp-sdk/
+data/
+model/
+test/
+.gitmodules
+*.bin
+*.elf
+*.aedat
+__pycache__/
