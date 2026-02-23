@@ -1,32 +1,40 @@
-# APAI-Docker
+# Architectures for Artificial Intelligence: Hardware-Aware AI Portfolio
+**Master’s in Electronics Engineering | University of Bologna**
 
-This repository contains the basic configuration files to be used during the course of Architectures and Platforms for Artificial Intelligence.
+This repository showcases my implementation of the **APAI 2025** lab sequence, focused on the design and deployment of Deep Neural Networks (DNNs) on **Parallel Ultra Low Power (PULP)** architectures.
 
-Prerequisites:
-1. VSCode
-2. Docker desktop
-3. Dev Containers extension for VSCode
-4. This repository
+---
 
-## Container build
+## 🛠️ Technical Focus & Expertise
 
-1. Open the current folder in a terminal (bash) and open VSCode (code .).
-2. Once the new windows opens, click on the pop-up "rebuild in container".
-3. Let VSCode install create the container for you
-4. Open a new terminal inside the containerized VSCode
-5. Run "source install.sh"
-6. Every other time you open a terminal, source "setup-pulp-sdk.sh"
+* **Edge AI Deployment**: Successfully transitioned models from **PyTorch/ONNX** frameworks to C-based execution on **RISC-V** platforms.
+* **Hardware Acceleration**: Utilized **NE16 hardware accelerators** to optimize and speed up convolution operations.
+* **Model Optimization**: Applied **Post-Training Quantization (8-bit)** and **Tiling** strategies to fit complex DNNs into constrained L1/L2 memory.
+* **On-Device Learning (ODL)**: Implemented **TinyTransformers** and local training modules for autonomous, low-power IoT nodes.
 
-## Container testing
+---
 
-PULP-SDK: 
-1. Go into the tests/pulp/ folder
-2. Run "make all run"
-3. You should see and Hello World.
+## 📂 Laboratory Solutions Breakdown
 
-PyTorch: 
-1. Open the file present in tests/pytorch/ folder (test.ipynb) into your editor 
-2. Run the block of code. 
-3. The first time, VSCode will ask to install iPython and select the kernel. Select the gvsoc-env enviroment to run the ipython. 
-4. Enjoy your results!
+| Lab Module | Core Technical Implementation |
+| :--- | :--- |
+| **01-02: Embedded Basics** | Developed optimized C kernels for vector operations; profiled cycle-efficiency using **GVSOC**. |
+| **03: DNN Shrinking** | Executed model compression and **8-bit quantization** to minimize memory footprint. |
+| **04-06: TinyML & ODL** | Designed **TinyTransformers** and implemented **On-Device Learning** protocols. |
+| **07-09: PULP & NE16** | Engineered memory **tiling** logic and integrated **NE16 accelerators** for high-efficiency inference. |
+| **10: End-to-End** | Validated the full deployment pipeline, from training to hardware-level execution. |
 
+
+
+---
+
+## 🏗️ Environment & Tools
+
+* **Platform**: PULP-SDK / RISC-V.
+* **Infrastructure**: Developed within a **Docker** environment using **Dev Containers** for consistent toolchain management.
+* **Simulators**: Cycle-accurate profiling conducted via **GVSOC**.
+
+---
+
+### Acknowledgments
+*Original templates and course materials provided by the **EEESlab** (Energy-Efficient Embedded Systems Lab) at the **University of Bologna**.*
