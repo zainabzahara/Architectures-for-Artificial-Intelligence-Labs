@@ -1,63 +1,25 @@
-# APAI-LAB01: Basics of Embedded Programming on PULP
+# Lab 01: Embedded Programming & Hardware Profiling on PULP
+**Master’s in Electronics Engineering | University of Bologna**
 
-## Material
-
-Assignment: [here](docs/assignment.docx)
-Sldes: [here](docs/slides.pdf)
-
-## Summary:
-The target device for the lab sessions is the multi-core [PULP](https://github.com/pulp-platform/pulp) platform.
-The PULP Virtual Platform simulator GVSOC, which is included within the [PULP SDK](https://github.com/pulp-platform/pulp-sdk), will be used during the class.
-
-- **Subject(s)**: hello-world, vector sum, matrix-vector mul, profiling code execution;
-- **Programming Language**: C;
-- **Lab duration**: 3h
-- **Objective**: Embedded programming & profiling. You will learn basics of embedded programming, the pulp architecture, basic operations (sum & matmul), and how to profile your code execution (MAC, cycles) !
+## 📌 Overview
+This lab focuses on the implementation and performance analysis of foundational embedded kernels on the **Parallel Ultra Low Power (PULP)** multi-core platform. The objective was to develop low-level C code and utilize cycle-accurate simulation to understand the hardware-software interface.
 
 
-## How to deliver the assignment:
 
-Use Virtuale, upload only the assignment file named as follows: LAB#_APAI_yourname.ipynb
+## 🛠️ Technical Implementation
+I successfully implemented and profiled several core kernels, focusing on arithmetic efficiency and memory management:
+* **Vector Operations**: Developed optimized C kernels for vector summation.
+* **Matrix-Vector Multiplication**: Implemented a matrix-vector product kernel, ensuring proper data alignment for the PULP architecture.
+* **Performance Profiling**: Utilized **GVSOC** (PULP Virtual Platform) and hardware counters to measure:
+    * **MAC Operations**: Total Multiply-Accumulate operations executed.
+    * **Clock Cycles**: Total execution time for each kernel.
+    * **CPI Analysis**: Evaluation of Cycles Per Instruction to identify execution bottlenecks.
 
+## 🚀 Environment & Tools
+* **Architecture**: PULP (RISC-V multi-core).
+* **Toolchain**: PULP SDK and GVSOC simulator.
+* **Language**: Embedded C.
 
-**Assignment DEADLINE: 10/10/2025 (at 14:30)**
-
-___
-
-## Quickstart
-
-### How to set the environment (Your PC)
-
-1. Open a terminal
-2. Go into 'APAI-Docker' folder.
-3. Open VSCode with 'code .'
-4. On VSCode, click on 'Reopen in container'.
-5. Open you new terminal in VSCode and launch the following commands to clone this repository:
-```
-git clone https://github.com/EEESlab/APAI25-LAB01-PULP-Embedded-Programming
-cd APAI25-LAB01-PULP-Embedded-Programming/
-```
-5. Now you're ready to start!
-
-### How to set the environment (LAB1)
-
-1. Open the VirtualBox virtual machine
-2. Open a terminal (CTRL+T or open terminal)
-3. Go into 'APAI-Docker' folder.
-4. Open VSCode with 'code .'
-5. On VSCode, click on 'Reopen in container'.
-6. Open you new terminal in VSCode and launch the following commands to clone this repository:
-```
-git clone https://github.com/EEESlab/APAI25-LAB01-PULP-Embedded-Programming
-cd APAI25-LAB01-PULP-Embedded-Programming/
-```
-7. Now you're ready to start!
-
-#### How to run the code
-**[DO NOT FORGET]** Every time you open a new terminal run:
-
-`source setup-pulp-sdk.sh`
-
-To run the code enter in a terminal
-
-`make clean all run`
+---
+### Acknowledgments
+*Original lab templates and course materials provided by **EEESlab** (Energy-Efficient Embedded Systems Lab) at the **University of Bologna**.*
