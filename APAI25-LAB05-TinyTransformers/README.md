@@ -1,62 +1,24 @@
-# APAI-LAB05: Tiny Transformers
+# Lab 05: TinyTransformers — Optimizing Attention for Edge AI
+**Master’s in Electronics Engineering | University of Bologna**
 
-## Material
-
-1) Assignment: [here](docs/assignment.docx)
-2) Slides: [here](docs/slides.pdf)
-
-Reminders:
-1) [Multi-head Self Attention](docs/Multihead_Attention.xlsx)
-2) [Full-Stack Transformer](docs/Transformer_Full_Stack.xlsx)
+## 📌 Overview
+This lab focused on the implementation and optimization of **Transformer-based architectures** for resource-constrained embedded systems. The objective was to adapt the **Multi-head Self Attention (MHSA)** mechanism and full-stack Transformer blocks to run efficiently on the **PULP** multi-core platform.
 
 
-## How to deliver the assignment:
 
-Use Virtuale, upload only the assignment file named as follows: LAB#_APAI_yourname.pdf
+## 🛠️ Technical Implementation
+I successfully implemented several core Transformer components, focusing on computational efficiency and memory management for low-power hardware:
+* **Multi-head Self Attention (MHSA)**: Developed optimized kernels for self-attention, managing the high memory demands of Q, K, and V matrix operations.
+* **Full-Stack Transformer Integration**: Orchestrated the integration of Feed-Forward Networks (FFN) and layer normalization within the embedded pipeline.
+* **System Initialization**: Managed hardware-specific environment setups and initialization scripts to handle the specialized memory requirements of the Transformer stack.
+* **Performance Analysis**: Profiled the execution of attention heads to identify and mitigate computational bottlenecks on the RISC-V cluster.
 
+## 🚀 Environment & Tools
+* **Architecture**: PULP (RISC-V multi-core).
+* **Implementation**: Embedded C focused on hardware-aware optimization.
+* **Simulation**: GVSOC for cycle-accurate performance estimation.
 
-**Assignment DEADLINE: 07/11/2025 (at 15:30)**
+---
 
-___
-
-## Quickstart
-
-### How to set the environment (Your PC)
-
-1. Open a terminal
-2. Go into 'APAI-Docker' folder.
-3. Open VSCode with 'code .'
-4. On VSCode, click on 'Reopen in container'.
-5. Open you new terminal in VSCode and launch the following commands to clone this repository:
-```
-git clone https://github.com/EEESlab/APAI25-LAB05-TinyTransformers 
-cd APAI25-LAB05-TinyTransformers/
-```
-5. Now you're ready to start!
-
-### How to set the environment (LAB1)
-
-1. Open the VirtualBox virtual machine
-2. Open a terminal (CTRL+T or open terminal)
-3. Go into 'APAI-Docker' folder.
-4. Open VSCode with 'code .'
-5. On VSCode, click on 'Reopen in container'.
-6. Open you new terminal in VSCode and launch the following commands to clone this repository:
-```
-git clone https://github.com/EEESlab/APAI25-LAB05-TinyTransformers 
-cd APAI25-LAB05-TinyTransformers/
-```
-7. Now you're ready to start!
-
-#### How to run the code
-**[DO NOT FORGET]** Every time you open a new terminal run:
-
-`source setup-pulp-sdk.sh`
-
-To run the code enter in a terminal: 
-
-`make clean all run`
-
-Also before running any command in this folder, make sure to:
-
-`source initialization.sh`
+### Acknowledgments
+*Original lab templates and course materials provided by **EEESlab** (Energy-Efficient Embedded Systems Lab) at the **University of Bologna**.*
