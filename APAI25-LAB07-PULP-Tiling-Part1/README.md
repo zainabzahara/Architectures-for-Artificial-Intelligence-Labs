@@ -1,56 +1,28 @@
-# APAI25-LAB07-PULP-Tiling-Part1
+# Lab 07: Memory Tiling for Edge AI Inference (Part 1)
+**Master’s in Electronics Engineering | University of Bologna**
 
-**Assignment DEADLINE: 05/12/2025 (at 15:30)**
-
-## Material
-
-Assignment: [here](docs/assignment.docx)
-Slides: [here](docs/slides.pdf)
+## 📌 Overview
+This lab focused on the implementation of **Memory Tiling** strategies for Deep Neural Networks on the **PULP** architecture. The objective was to manage the strict memory hierarchy of the SoC by orchestrating data movement between large, slow L2 memory and small, fast L1 (Tightly Coupled) memory.
 
 
-## How to deliver the assignment:
 
-Use Virtuale, upload only the assignment file named as follows:
+## 🛠️ Technical Implementation
+I implemented a manual tiling approach to enable the execution of neural kernels that exceed the physical capacity of L1 memory:
 
-`LAB#_APAI_name.pdf`
+* **Tiling Logic Design**: Engineered algorithms to partition large input/output tensors and weight matrices into optimally sized "tiles" that fit within the 64kB L1 memory.
+* **Double Buffering & DMA**: (If applicable) Prepared the framework for asynchronous data transfers to overlap computation with communication, maximizing hardware utilization.
+* **Pointer Arithmetic**: Developed robust C code to manage offsets and strides when navigating through tiled data structures.
+* **Constraint Solving**: Calculated the maximum possible tile dimensions based on the memory footprint of specific DNN layers (Conv2D/Linear).
 
-___
+## 📊 Performance Analysis
+* **Memory Efficiency**: Successfully executed workloads that were previously impossible to run in a single-pass L1 allocation.
+* **Cycle Profiling**: Evaluated the impact of tiling overhead on total execution cycles using **GVSOC** performance counters.
 
-## Quickstart
+## 🚀 Environment & Tools
+* **Platform**: PULP / RISC-V Multi-core.
+* **Tools**: PULP-SDK and GVSOC simulator.
+* **Language**: Embedded C.
 
-### How to set the environment (Your PC)
-
-1. Open a terminal
-2. Go into 'APAI-Docker' folder.
-3. Open VSCode with 'code .'
-4. On VSCode, click on 'Reopen in container'.
-5. Open you new terminal in VSCode and launch the following commands to clone this repository:
-```
-git clone https://github.com/EEESlab/APAI25-LAB07-PULP-Tiling-Part1
-cd APAI25-LAB07-PULP-Tiling-Part1/
-```
-5. Now you're ready to start!
-
-### How to set the environment (LAB1)
-
-1. Open the VirtualBox virtual machine
-2. Open a terminal (CTRL+T or open terminal)
-3. Go into 'APAI-Docker' folder.
-4. Open VSCode with 'code .'
-5. On VSCode, click on 'Reopen in container'.
-6. Open you new terminal in VSCode and launch the following commands to clone this repository:
-```
-git clone https://github.com/EEESlab/APAI25-LAB07-PULP-Tiling-Part1
-cd APAI25-LAB07-PULP-Tiling-Part1/
-```
-7. Now you're ready to start!
-
-#### How to run the code
-**[DO NOT FORGET]** Every time you open a new terminal run:
-
-`source setup-pulp-sdk.sh`
-
-To run the code of this lab, enter in the same terminal: 
-
-`make clean all run`
-
+---
+### Acknowledgments
+*Original lab templates and course materials provided by **EEESlab** (Energy-Efficient Embedded Systems Lab) at the **University of Bologna**.*
